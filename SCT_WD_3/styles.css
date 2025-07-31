@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.game-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header i {
+    font-size: 2.5rem;
+    color: #667eea;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.header h1 {
+    color: #333;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.game-mode-toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+
+.mode-btn {
+    padding: 10px 20px;
+    border: 2px solid #667eea;
+    background: transparent;
+    color: #667eea;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.mode-btn:hover {
+    background: rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.mode-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+.game-info {
+    margin-bottom: 30px;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.player.active {
+    transform: scale(1.05);
+    background: rgba(102, 126, 234, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.player i {
+    font-size: 1.5rem;
+    color: #667eea;
+}
+
+.player span {
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.score {
+    background: #667eea;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.vs {
+    font-weight: 600;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.current-player {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.game-board {
+    margin-bottom: 30px;
+}
+
+.board-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.board-row:last-child {
+    margin-bottom: 0;
+}
+
+.cell {
+    flex: 1;
+    aspect-ratio: 1;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cell:hover {
+    background: #e9ecef;
+    transform: scale(1.05);
+}
+
+.cell.x {
+    color: #e74c3c;
+}
+
+.cell.o {
+    color: #3498db;
+}
+
+.cell.winning {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.game-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.new-game-btn {
+    background: #28a745;
+    color: white;
+}
+
+.new-game-btn:hover {
+    background: #218838;
+}
+
+.reset-score-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.reset-score-btn:hover {
+    background: #c82333;
+}
+
+.game-status {
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 500;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-status.win {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+}
+
+.game-status.draw {
+    background: linear-gradient(135deg, #6c757d, #495057);
+    color: white;
+}
+
+@media (max-width: 480px) {
+    .game-card {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .cell {
+        font-size: 2rem;
+    }
+    
+    .game-controls {
+        flex-direction: column;
+    }
+    
+    .player-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .vs {
+        font-size: 1rem;
+    }
+    
+    .game-mode-toggle {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .mode-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+} 
